@@ -10,6 +10,10 @@ Store example SQL scripts from CS1011 Database Management - Foundations course f
     - Password: postgres
 3) Run your test queries
 
+### Resetting Database
+Executing the reinit-sql.sh script will drop, recreate, and reinitialize the database with data.
+`./reinit-sql.sh`
+
 ### Troubleshooting
 * **Scripts aren't executable**
     - Make sure you have permission to execute
