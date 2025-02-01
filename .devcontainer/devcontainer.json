@@ -5,6 +5,14 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"containerEnv": {
+		"GIT_EDITOR": "code",
+		"PGHOST": "localhost",
+		"PGPORT": "5432",
+		"PGUSER": "postgres",
+		"PGPASSWORD": "postgres",
+		"PGDATABASE": "dvdrental"
+	},
 	"features": {
 		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {},
 		"ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {
