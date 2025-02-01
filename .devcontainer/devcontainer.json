@@ -11,7 +11,17 @@
 			"version": "13"
 		}
 	},
-	"forwardPorts": [5432]
+	"forwardPorts": [
+		5432
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ckolkman.vscode-postgres",
+				"ms-ossdata.vscode-postgresql"
+			]
+		}
+	}
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
