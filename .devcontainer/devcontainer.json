@@ -18,7 +18,8 @@
 		"vscode": {
 			"extensions": [
 				"ckolkman.vscode-postgres",
-				"ms-ossdata.vscode-postgresql"
+				"ms-ossdata.vscode-postgresql",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}
