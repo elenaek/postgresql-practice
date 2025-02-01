@@ -5,21 +5,14 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-
     volumes:
       - ../..:/workspaces:cached
-      
-    # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
+    network_mode: service:psql-db
 
-    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:db
-
-    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
-
-  db:
+  psql-db:
     image: postgres:17.2
+    restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
@@ -27,15 +20,16 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: dvdrental
 
-    # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
-  pgAdmin:
-    image: dpage/pgadmin4:8.4
+  pg-admin:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
     ports:
       - "5050:80"
+    volumes: 
+      - './pgadmin4/servers.json:/pgadmin4/servers.json'
     environment:
       PGADMIN_DEFAULT_EMAIL: postgres@admin.com
       PGADMIN_DEFAULT_PASSWORD: postgres
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
 volumes:
   postgres-data:
-  pgadmin-data:
