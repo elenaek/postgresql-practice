@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dropdb $PGDATABASE && echo "Database: $PGDATABASE dropped!";
+dropdb $PGDATABASE && echo "Database: $PGDATABASE dropped.";
