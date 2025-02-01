@@ -6,10 +6,12 @@
 Store example SQL scripts from CS1011 Database Management - Foundations course for future use.
 ### Getting Started
 1) Build and attach to devcontainer
-2) `./init-sql.sh`
+2) Initialize the DB 
+    - `./init-sql.sh`
     - Password: postgres
 3) Run your test queries
-
+    - You can use [pgadmin4](#pgAdmin4)
+    - You can use VSC's PostgreSQL extension included in the devcontainer
 ### Dev Container
 * Node.js 22
 * pgAdmin4 8.4
@@ -39,8 +41,10 @@ Executing the reinit-sql.sh script will drop, recreate, and reinitialize the dat
 
 ### Troubleshooting
 * **Scripts aren't executable**
-    - Make sure you have permission to execute
-    - `chmod -R 755 psql-client-scripts/`
+    1)  Make sure you have permission to execute
+        - `sudo su` OR `chmod -R +x .*`
+* **File cannot be found error when running init scripts**
+    1) Ensure line endings are set to LF: `\n`
 ### PostgresSQL Configuration
 | Name | Value | Description |
 |---|---|---|
