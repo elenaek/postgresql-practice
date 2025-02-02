@@ -4,7 +4,7 @@
 
 CREATE VIEW actor_film
 AS
-SELECT actor.*, film.*
+SELECT actor.actor_id, film.film_id, actor.first_name, actor.last_name, film.title, film.description, film.special_features
 FROM actor, film_actor
 INNER JOIN film ON film_actor.film_id = film.film_id
 WHERE film_actor.film_id = film.film_id AND
