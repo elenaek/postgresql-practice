@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
-echo "List roles with login (user roles)"
+# List all roles
+echo "List roles"
 echo "-----------------------------------"
 psql -c "\du+"

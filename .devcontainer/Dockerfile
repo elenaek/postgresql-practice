@@ -1,8 +1,10 @@
 FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
+RUN apt-get update
+RUN apt-get install -y postgresql-client-17
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
+    # && apt-get -y install --no-install-recommends <your-package-list-here>
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
