@@ -11,10 +11,11 @@ SELECT r.rolname AS user_name,
        pg_roles r CROSS JOIN
        unnest(ARRAY['SELECT','INSERT','UPDATE','DELETE','TRUNCATE','REFERENCES','TRIGGER']) p(perm)
  WHERE relkind = 'r' AND
+       has_table_privilege(rolname, c.oid, p.perm) AND
        rolname = 'superman';
 
 
--- Lists the table privs of a role (justice_league) as it pertains specifically to tables that are not system tables
+-- Lists the table privs of a role (justice_league) as it pertains specifically to tables that are not tables pg_catalog and information_schema
 
 -- SELECT r.rolname AS user_name,
 --        c.oid::regclass AS table_name,
