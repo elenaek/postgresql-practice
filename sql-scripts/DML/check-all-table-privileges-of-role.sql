@@ -14,7 +14,7 @@ SELECT r.rolname AS user_name,
        rolname = 'superman';
 
 
--- Lists the table privs of a role (justice_league) as it pertains specifically to tables 
+-- Lists the table privs of a role (justice_league) as it pertains specifically to tables that are not system tables
 
 -- SELECT r.rolname AS user_name,
 --        c.oid::regclass AS table_name,
