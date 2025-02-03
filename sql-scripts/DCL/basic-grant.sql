@@ -35,3 +35,5 @@ GRANT justice_league TO superman, batman;
 GRANT actor_managers TO johnny_cage;
 -- GRANT select, insert, update and delete privs on the tables actor to the group actor_managers
 GRANT SELECT, INSERT, UPDATE, DELETE ON actor TO actor_managers; 
+-- GRANT INSERT to just the columns actor_id, film_id, last_update on table film_actor to group/role actor_managers
+GRANT SELECT, INSERT(actor_id,film_id,last_update) ON film_actor TO actor_managers;

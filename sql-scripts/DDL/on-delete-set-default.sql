@@ -10,5 +10,7 @@ CREATE TABLE department (
     department_id SERIAL PRIMARY KEY,
     department_name VARCHAR(100) NOT NULL,
     representative_id INT default 1,
-    CONSTRAINT fk_representative FOREIGN KEY (representative_id) REFERENCES representative(representative_id) ON DELETE SET DEFAULT
+    CONSTRAINT fk_representative 
+    FOREIGN KEY (representative_id) 
+    REFERENCES representative(representative_id) ON DELETE SET DEFAULT
 );
