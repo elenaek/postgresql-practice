@@ -3,13 +3,13 @@
 CREATE OR REPLACE VIEW actor_film
 AS
 SELECT actor.actor_id, 
-film.film_id, 
-actor.first_name, 
-actor.last_name, 
-film.title, 
-film.description, 
-film.special_features,
-film.fullText
+    film.film_id, 
+    actor.first_name, 
+    actor.last_name, 
+    film.title, 
+    film.description, 
+    film.special_features,
+    film.fullText
 FROM actor, film_actor
 INNER JOIN film ON film_actor.film_id = film.film_id
 WHERE film_actor.film_id = film.film_id AND
