@@ -1,9 +1,13 @@
 # Overview
-* SQL Practice for CS1011 Database Management - Foundations
-* Contains a devcontainer with all PostgreSQL for practicing SQL queries
-* Contains a DB init script
+* Meant to be a sandbox for playing with PostgreSQL locally on your machine
+* PostgreSQL Practice for CS1011 Database Management - Foundations
+* Contains a devcontainer with PostgreSQL, and tools for interacting with PostgreSQL dbs and servers for practicing SQL queries and administration tasks
+* Contains sample DB data from _Neontech_ to practice with
 
-Store example SQL scripts from CS1011 Database Management - Foundations course for future use.
+### Requirements
+* Docker or Docker Desktop
+* Visual Studio Code for best integration
+
 ### Getting Started
 1) Build and attach to devcontainer
 2) Initialize the DB 
@@ -12,7 +16,8 @@ Store example SQL scripts from CS1011 Database Management - Foundations course f
 3) Run your test queries
     - You can use [pgadmin4](#pgAdmin4)
     - You can use VSC's PostgreSQL extension included in the devcontainer
-### Dev Container
+    
+### Dev Container Versions
 * Node.js 22
 * pgAdmin4 8.4
 * PostgreSQL 17.2
@@ -26,6 +31,16 @@ Store example SQL scripts from CS1011 Database Management - Foundations course f
 | PGDATABASE | dvdrental | Used for client scripts connection string |
 | PGUSER | postgres | Used for init script and client scripts connection string |
 | PGPASSWORD | postgres | Used for init script and client scripts connection string |
+
+### Usage
+* pgAdmin4 is packaged with the devcontainer and you can access it by default at `http://localhost:5050`
+    * You can use this to play with Database Administration, test SQL queries and just learn the overall structure of a PostgreSQL database
+* Peruse, test, learn or refer to the postgresql-client scripts from the `psql-client-scripts` directory
+* Peruse, test, learn or refer to the SQL scripts from the `sql-scripts` directory
+    * _DCL_ is Data Control Language scripts, like creating, revoking or granting roles and privileges
+    * _DDL_ is Data Definition Lanaguage scripts, like creating, dropping, updating tables or views
+    * _DML_ is Data Manipulation Language scripts, like selecting attributes, records or tables
+    * _TCL_ is Transaction Control Language scripts, like starting, savepoints, rollingback or ending transactions
 
 ### Sample Database
 * Sample Database from [NeonTech](https://neon.tech/postgresql/postgresql-getting-started/postgresql-sample-database)
@@ -45,6 +60,7 @@ Executing the reinit-sql.sh script will drop, recreate, and reinitialize the dat
         - `sudo su` OR `chmod -R +x .*`
 * **File cannot be found error when running init scripts**
     1) Ensure line endings are set to LF: `\n`
+
 ### PostgresSQL Configuration
 | Name | Value | Description |
 |---|---|---|
