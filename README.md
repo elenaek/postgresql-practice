@@ -5,15 +5,18 @@
 * Contains sample DB data from _Neontech_ to practice with
 
 ### Requirements
+* Git
 * Docker or Docker Desktop
 * Visual Studio Code for best integration
 
 ### Getting Started
-1) Build and attach to devcontainer
-2) Initialize the DB 
+1) `git clone https://github.com/elenaek/postgresql-practice.git`
+2) `code ./postgresql-practice`
+3) Build and attach to devcontainer in VSC
+4) Initialize the DB 
     - `./init-sql.sh`
     - Password: postgres
-3) Run your test queries
+5) Run your test queries, explore pgAdmin4, do your thing
     - You can use [pgadmin4](#pgAdmin4)
     - You can use VSC's PostgreSQL extension included in the devcontainer
     
@@ -21,7 +24,7 @@
 * Node.js 22
 * pgAdmin4 8.4
 * PostgreSQL 17.2
-* PostgreSQL Client 13
+* PostgreSQL Client 17
 * PostgreSQL Tools for Management in VSC
 
 |Environment Variable Name | Default Value| Description |
